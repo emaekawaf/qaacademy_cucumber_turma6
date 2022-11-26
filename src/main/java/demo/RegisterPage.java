@@ -19,7 +19,7 @@ public class RegisterPage {
     private String emailAddress = "//*[@id=\"eid\"]/input";
     private String phone = "//*[@id=\"basicBootstrapForm\"]/div[4]/div/input";
     private String gender = "//*[@id=\"basicBootstrapForm\"]/div[5]/div/label[2]/input";
-    private String hobbies = "//*[@id=\"basicBootstrapForm\"]/div[6]/div/div[2]/label";
+    private String hobbies = "checkbox2";
     private String skills = "Skills";
     private String selectCountry1 = "//*[@id=\"basicBootstrapForm\"]/div[10]/div/span/span[1]/span";
     private String selectCountry2 = "//*[@id=\"select2-country-results\"]/li[7]";
@@ -46,7 +46,7 @@ public class RegisterPage {
         driver.findElement(By.xpath(gender)).click();
     }
     public void selecionarHobbies(){
-        driver.findElement(By.xpath(hobbies)).click();
+        driver.findElement(By.id(hobbies)).click();
     }
     public void selecionarSkills(String skill){
         Select selectSkills = new Select(driver.findElement(By.id(skills)));
