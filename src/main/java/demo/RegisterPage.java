@@ -46,6 +46,8 @@ public class RegisterPage {
         driver.findElement(By.xpath(gender)).click();
     }
     public void selecionarHobbies(){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,550)", ""); //scroll automático
         driver.findElement(By.id(hobbies)).click();
     }
     public void selecionarSkills(String skill){
@@ -53,8 +55,6 @@ public class RegisterPage {
         selectSkills.selectByVisibleText(skill);
     }
     public void selecionarPais(){
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,550)", ""); //scroll automático
         driver.findElement(By.xpath(selectCountry1)).click();
         driver.findElement(By.xpath(selectCountry2)).click();
     }
