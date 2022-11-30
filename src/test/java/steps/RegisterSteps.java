@@ -27,7 +27,7 @@ public class RegisterSteps {
     public void abrirBrowser(){
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); //espera do elemento
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(25)); //espera do elemento
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(15)); //espera do carregamento da página
     }
     @After("@Register")
@@ -46,11 +46,11 @@ public class RegisterSteps {
     @Dado("que eu acesso o site Register")
     public void queEuAcessoOSiteRegister() {
         driver.get("https://demo.automationtesting.in/Register.html");
-        registerPage = new RegisterPage(driver);
     }
 
     @Quando("preencho o campo nome com valor {string}")
     public void preenchoOCampoNomeComValor(String nome) {
+        registerPage = new RegisterPage(driver);
         registerPage.preencherNome(nome);
     }
 
